@@ -1,7 +1,7 @@
  
-let music = new Audio("music.mp3");
-let audioTurn = new Audio("ting.mp3");
-let gameover = new Audio("gameover.mp3");
+let music = new Audio("Songs/music.mp3");
+let audioTurn = new Audio("Songs/ting.mp3");
+let gameover = new Audio("Songs/gameover.mp3");
 
 let turn = "X";
 let isgameover = false;
