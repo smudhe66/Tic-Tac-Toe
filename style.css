@@ -19,10 +19,10 @@ nav ul{
     
 }
 .gameContainer{
-    
     display: flex;
     justify-content: center;
     margin-top: 50px;
+    
 }
 
 .container{
@@ -30,6 +30,7 @@ nav ul{
     grid-template-columns: repeat(3,10vw);
     grid-template-rows: repeat(3,10vw);
     font-family: 'Roboto', sans-serif;
+    position: relative;
 }
 
 .box{
@@ -45,13 +46,41 @@ nav ul{
     background-color: rgb(213, 203, 223);
 }
 
+.info{
+    font-size: 2.5vw;
+}
+
 .gameInfo{
     padding: 0 34px;
     font-family: 'Roboto Slab', serif;
 }
 
+.gameInfo h1{
+    font-size: 2.5rem;
+}
 .imgbox img{
-    display: none;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+#reset{
+    margin: 0 23px;
+    padding: 5px 18px;
+    background-color: rgb(227, 199, 227);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 2vw;
+    font-family: 'Roboto Slab', serif;
+}
+
+.line{
+    background-color: rgb(120, 28, 201);
+    width: 0;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    transition: width 1s ease-in-out;
+    
 }
 
 /* Utility Classes */
@@ -66,4 +95,27 @@ nav ul{
 }
 .bb-0{
     border-bottom: 0;
+}
+
+/* media queries */
+@media screen and (max-width: 800px){
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+    .gameInfo h1{
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+    }
+    .info{
+        font-size: 3vw;
+    }
+    .container{
+        /* display: grid; */
+    grid-template-columns: repeat(3,18vw);
+    grid-template-rows: repeat(3,18vw);
+    }
+    
 }
