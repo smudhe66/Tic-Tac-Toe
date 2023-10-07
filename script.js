@@ -1,5 +1,4 @@
- 
-let music = new Audio("Songs/music.mp3");
+ let music = new Audio("Songs/music.mp3");
 let audioTurn = new Audio("Songs/ting.mp3");
 let gameover = new Audio("Songs/gameover.mp3");
 
@@ -21,7 +20,6 @@ const checkTie = () => {
     }
     return true; // All boxes are filled, indicating a tie
 }
-
 
 //function to check for win
 const checkWin = ()=>{
@@ -61,7 +59,7 @@ const checkWin = ()=>{
 } 
 
 //Game Logic
-// music.play();
+music.play();
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element =>{
     let boxtext = element.querySelector('.boxtext');

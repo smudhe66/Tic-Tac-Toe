@@ -16,7 +16,6 @@ nav{
 }
 nav ul{
     list-style-type: none;
-    
 }
 nav ul li a{
     text-decoration: none;
@@ -26,7 +25,6 @@ nav ul li a{
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    
 }
 
 .container{
@@ -117,7 +115,6 @@ nav ul li a{
         font-size: 3vw;
     }
     .container{
-        /* display: grid; */
     grid-template-columns: repeat(3,18vw);
     grid-template-rows: repeat(3,18vw);
     }
