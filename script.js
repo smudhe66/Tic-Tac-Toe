@@ -11,6 +11,18 @@ const changeTurn = ()=>{
     return turn === "X"?"0": "X";
 }
 
+// Function to check for a tie
+const checkTie = () => {
+    let boxtexts = document.querySelectorAll('.boxtext');
+    for (let boxtext of boxtexts) {
+        if (boxtext.innerText === '') {
+            return false; // If any box is empty, the game is not a tie
+        }
+    }
+    return true; // All boxes are filled, indicating a tie
+}
+
+
 //function to check for win
 const checkWin = ()=>{
     let boxtexts = document.getElementsByClassName('boxtext');
@@ -36,11 +48,16 @@ const checkWin = ()=>{
             document.querySelector('.line').style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`;
 
             document.querySelector('.line').style.width = "24vw";
-
-            
             
         }
+        
     })
+    
+    if (!isgameover && checkTie()) {
+        document.querySelector('.info').innerText = "It's a Tie!";
+        isgameover = true;
+        gameover.play();
+    }
 } 
 
 //Game Logic
@@ -55,11 +72,14 @@ Array.from(boxes).forEach(element =>{
             turn = changeTurn();
             audioTurn.play();
             checkWin();
+            
             if(!isgameover){
                 document.getElementsByClassName("info")[0].innerText = "turn for " + turn;
             }
         }
+        
     });
+    
 });
 
 //add onclick listner to reset button
